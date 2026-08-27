@@ -142,7 +142,7 @@ jobs:
         if: contains(matrix.target, 'loongarch64')
         run: |
           echo '[patch.crates-io]' >> Cargo.toml
-          echo 'oxc_resolver = { git = "https://github.com/loong64/oxc-resolver", branch = "loong64-v11.24.2" }' >> Cargo.toml
+          echo 'oxc_resolver = { git = "https://github.com/loong64/oxc-resolver", branch = "loong64-v11.24.3" }' >> Cargo.toml
           cargo update -p oxc_resolver
 
       - name: Build Binding

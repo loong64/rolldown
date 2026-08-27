@@ -61,6 +61,8 @@ jobs:
 
       - name: Run Tasks
         if: ${{ steps.check_update.outputs.update == 'yes' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           sleep 5s
           gh workflow run publish-to-npm.yml --repo ${{ github.repository }} --ref loong64-${version} --raw-field npm_tag=${version/v/}
