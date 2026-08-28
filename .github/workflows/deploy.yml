@@ -56,7 +56,8 @@ jobs:
           git checkout ${version} -b loong64-${version}
           wget -qO - https://github.com/${{ github.repository }}/raw/refs/heads/main/patch_loong64.patch | patch -p1
 
-          git commit -am "Add loongarch64 support"
+          git add .
+          git commit -m "feat: add loongarch64 platform support"
           git push origin loong64-${version} --force
 
       - name: Run Tasks
